@@ -1,4 +1,3 @@
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,26 +5,23 @@
     <title>Login Page</title>
     <style>
         body {
+            background-color: #f8c1c1;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f8caca;
         }
         .login-container {
             background-color: white;
-            padding: 20px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: center;
-        }
-        .login-container h1 {
-            margin-bottom: 20px;
+            width: 300px;
         }
         .login-container input {
-            width: 100%;
+            width: 90%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
@@ -43,35 +39,33 @@
         .login-container button:hover {
             background-color: #0056b3;
         }
-        .login-container a {
-            text-decoration: none;
-            color: #007bff;
-        }
-        .login-container a:hover {
-            text-decoration: underline;
+        .message {
+            margin-top: 10px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Enter Username" required>
-            <input type="password" id="password" placeholder="Enter Password" required>
-            <button type="button" onclick="login()">Login</button>
-        </form>
-        <p>Don't have an account? <a href="#">Sign up</a></p>
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Enter Username" />
+        <input type="password" id="password" placeholder="Enter Password" />
+        <button onclick="validateLogin()">Login</button>
+        <div class="message" id="message"></div>
     </div>
 
     <script>
-        function login() {
+        function validateLogin() {
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
 
             if (username === 'Rakibul' && password === '7879') {
-                alert('Login Successful!');
+                message.style.color = 'green';
+                message.textContent = 'Login Successful';
             } else {
-                alert('Invalid Username or Password!');
+                message.style.color = 'red';
+                message.textContent = 'Invalid username or password';
             }
         }
     </script>
