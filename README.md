@@ -1,72 +1,68 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
     <style>
         body {
-            background-color: #f8c1c1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
         }
-        .login-container {
-            background-color: white;
+        .login-box {
+            background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            margin: auto;
         }
-        .login-container input {
+        input {
             width: 90%;
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
+        button {
+            background-color: blue;
             color: white;
             border: none;
+            padding: 10px;
+            width: 100%;
             border-radius: 5px;
             cursor: pointer;
         }
-        .login-container button:hover {
-            background-color: #0056b3;
-        }
-        .message {
-            margin-top: 10px;
-            font-size: 14px;
+        button:hover {
+            background-color: darkblue;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
+
+    <div class="login-box">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Enter Username" />
-        <input type="password" id="password" placeholder="Enter Password" />
-        <button onclick="validateLogin()">Login</button>
-        <div class="message" id="message"></div>
+        <input type="text" id="username" placeholder="Enter Username">
+        <input type="password" id="password" placeholder="Enter Password">
+        <button onclick="checkLogin()">Login</button>
+        <p id="message" style="color: red; font-weight: bold;"></p>
     </div>
 
     <script>
-        function validateLogin() {
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const message = document.getElementById('message');
-
-            if (username === 'Rakibul' && password === '7879') {
-                message.style.color = 'green';
-                message.textContent = 'Login Successful';
+        function checkLogin() {
+            var user = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            
+            if (user === "Rakibul" && pass === "7879") {
+                document.getElementById("message").style.color = "green";
+                document.getElementById("message").innerText = "Login Successful!";
             } else {
-                message.style.color = 'red';
-                message.textContent = 'Invalid username or password';
+                document.getElementById("message").innerText = "Invalid Username or Password!";
             }
         }
     </script>
+
 </body>
 </html>
