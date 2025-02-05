@@ -35,12 +35,4 @@ html lang="en">
             cursor: pointer;
         }
         button:hover {
-            background-color: darkblue;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="login-box">
-        <h2>Login</h2>
-        <input type="text" id="username" place
+            background-c
