@@ -43,25 +43,4 @@ html lang="en">
 
     <div class="login-box">
         <h2>Login</h2>
-        <input type="text" id="username" placeholder="Enter Username">
-        <input type="password" id="password" placeholder="Enter Password">
-        <button onclick="checkLogin()">Login</button>
-        <p id="message" style="color: red; font-weight: bold;"></p>
-    </div>
-
-    <script>
-        function checkLogin() {
-            var user = document.getElementById("username").value;
-            var pass = document.getElementById("password").value;
-            
-            if (user === "Rakibul" && pass === "7879") {
-                document.getElementById("message").style.color = "green";
-                document.getElementById("message").innerText = "Login Successful!";
-            } else {
-                document.getElementById("message").innerText = "Invalid Username or Password!";
-            }
-        }
-    </script>
-
-</body>
-</html>
+        <input type="text" id="username" place
